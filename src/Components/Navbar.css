@@ -1,0 +1,65 @@
+/* Main Navigation Box Styling */
+#navbox {
+    position: relative;
+    border: 1px solid rgb(194, 187, 187);
+    padding: 15px 50px;
+    /* Adjusted padding for a balanced look */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    /* Background color for contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+/* Logo Section */
+#logo img {
+    max-width: 250px;
+    /* Increased max-width for a larger logo */
+    height: auto;
+    object-fit: contain;
+    /* Keeps the logo aspect ratio intact */
+}
+
+/* Info Section */
+#info {
+    display: flex;
+    gap: 20px;
+    /* Increased gap slightly for breathing space */
+}
+
+/* Links in Info Section */
+#info a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Consistent font */
+    font-size: 18px;
+    /* Increased font size for better readability */
+    font-weight: 400;
+    background-color: rgb(39, 153, 203);
+    color: white;
+    text-align: center;
+    padding: 12px 24px;
+    /* Increased padding for a larger button appearance */
+    border-radius: 25px;
+    /* Slightly rounder for a modern look */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    /* Smooth transition on hover */
+    min-width: 120px;
+    /* Increased minimum width for a larger button */
+    height: 40px;
+    /* Adjusted height for better alignment with the larger logo */
+}
+
+/* Hover Effect for Links */
+#info a:hover {
+    background-color: white;
+    color: rgb(94, 162, 189);
+    border: 2px solid rgb(94, 162, 189);
+    cursor: pointer;
+    /* Pointer cursor on hover for better UX */
+}

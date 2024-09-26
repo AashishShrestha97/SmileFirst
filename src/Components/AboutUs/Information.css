@@ -1,0 +1,52 @@
+/* Main container */
+.info-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(39, 153, 203);
+    padding: 50px;
+    gap: 20px;
+    width: 100vw;
+    height: 115vh;
+    position: relative;
+    top: 30px;
+}
+
+/* Top section with text on the left and image on the right */
+.top-section {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Styling for the text on the left side */
+.text-left {
+    flex: 1;
+    color: #f5f5f5;
+    /* White text color for better readability */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+/* Container for the image on the right */
+.image-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image styling */
+.clinic-image {
+    max-width: 50vw;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Bottom section styling with full-width text */
+.bottom-section {
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    line-height: 1.6;
+}

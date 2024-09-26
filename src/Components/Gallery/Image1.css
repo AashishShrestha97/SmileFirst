@@ -1,0 +1,25 @@
+#boxOne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#boxOne div {
+    flex: 1;
+    text-align: center;
+}
+
+#boxOne img {
+    width: 100%;
+    max-width: 350px;
+    /* Increased the maximum width of the images */
+    height: auto;
+    margin-left: 90px;
+    margin-top: 60px;
+}
+
+#boxTwo #image5 {
+    margin-top: 50px;
+    margin-left: 170px;
+}
