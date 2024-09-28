@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import UpperButton from "../Components/ContactUs/UpperButton";
 import FormBox from "../Components/ContactUs/FormBox";
-import Footer from "../Components/Footer";
+import Footer2 from "../Components/ContactUs/Footer";
 
 const ContactUs=()=>{
     return(
@@ -10,7 +10,7 @@ const ContactUs=()=>{
         <Navbar />
         <UpperButton />
         <FormBox />
-        <Footer />
+        <Footer2 />
         </>
     )
 }

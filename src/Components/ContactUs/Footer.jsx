@@ -1,11 +1,11 @@
 // Footer.jsx
 import React from "react";
-import '../AboutUs/AboutUs.css';
+import '../ContactUs/ContactUs.css';
 
-const Footer1 = () => {
+const Footer2 = () => {
   return (
     <footer>
-      <div id="footer">
+      <div id="footers">
         <div id="contact">
           <h3>Reach Us at:</h3>
           <div id="icons">
@@ -78,11 +78,11 @@ const Footer1 = () => {
           </div>
         </div>
       </div>
-      <div id="footer-down">
+      <div id="footers-down">
         <p>Copyright © 2024 Smile First. All Rights Reserved. Developed.</p>
       </div>
     </footer>
   );
 };
 
-export default Footer1;
+export default Footer2;

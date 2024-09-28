@@ -1,4 +1,4 @@
-#footer-box {
+#footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -7,18 +7,15 @@
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    top: 10vh;
+    margin-top: 20vh;
     /* Moves the footer upwards */
 }
 
-#footer-bottom {
+#footer-down {
     text-align: center;
     background-color: rgb(203, 203, 203);
     color: rgb(93, 91, 91);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     padding: 35px;
-    margin-top: 10px;
-    position: relative;
-    top: 8.5vh;
 }
