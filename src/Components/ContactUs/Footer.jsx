@@ -4,7 +4,7 @@ import '../ContactUs/ContactUs.css';
 
 const Footer2 = () => {
   return (
-    <footer>
+    <footer id="the-footer">
       <div id="footers">
         <div id="contact">
           <h3>Reach Us at:</h3>
