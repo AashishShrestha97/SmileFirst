@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import './Schedule.css';
 
 const Schedule = () => {
+  const navigate = useNavigate(); // Create navigate instance
+
+  // Function to handle the button click
+  const handleScheduleClick = () => {
+    navigate("/ContactUs"); // Redirect to the schedule visit page
+  };
+
   return (
     <div>
       <div id="box1">
@@ -14,7 +22,7 @@ const Schedule = () => {
           online for personalized treatment.
         </p>
         <div id="btn2">
-          <button>Schedule Your Visit</button>
+          <button onClick={handleScheduleClick}>Schedule Your Visit</button> {/* Add onClick */}
         </div>
       </div>
       <div id="box2">

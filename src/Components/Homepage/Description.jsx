@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import './Description.css';
 
 const Description = () => {
+  const navigate = useNavigate(); // Create a navigate instance
+
+  // Function to handle button click
+  const handleClick = () => {
+    navigate("/ContactUs"); // This redirects to the Contact Us page
+  };
+
   return (
     <div>
       <div id="img1">
@@ -23,7 +31,7 @@ const Description = () => {
         </p>
       </div>
       <div id="btn1">
-        <button>Book Online</button>
+        <button onClick={handleClick}>Book Online</button> {/* Add onClick */}
       </div>
     </div>
   );
