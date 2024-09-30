@@ -1,27 +1,19 @@
 // App.jsx
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from "./Components/Navbar.jsx";
 import AboutUs from "./Pages/AboutUs.jsx";
 import Services from "./Pages/Services.jsx";
 import Gallery from "./Pages/Gallery.jsx";
 import ContactUs from "./Pages/ContactUs.jsx";
-import Description from "./Components/Homepage/Description.jsx";
-import Schedule from "./Components/Homepage/Schedule.jsx";
-import Footer from "./Components/Footer.jsx";
 import './Components/Navbar.css';
+import HomePage from "./Pages/HomePage.jsx";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={
-          <>
-                <Navbar />
-            <Description />
-            <Schedule />
-            <Footer />
-          </>
+        <HomePage/>
         } />
         <Route path="/AboutUs" element={<AboutUs/>} />
         <Route path="/Services" element={<Services />} />

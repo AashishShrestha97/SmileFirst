@@ -1,7 +1,7 @@
 import React from "react";
 import '../ContactUs/FormBox.css';
 
-const FormBox = () => {
+const FormBox = ({onSubmit,onChange,formData}) => {
     return (
         <div id="container"> {/* Wrapping the two main divs in a container */}
             <div id="mainbox">
@@ -13,21 +13,21 @@ const FormBox = () => {
                 </div>
                 <div id="form">
                     <h2>Write to us</h2>
-                    <form action="">
+                    <form onSubmit={onSubmit}>
                         <div className="input-group">
                             <img src="Name.png" alt="Name" />
-                            <input id="Name" type="text" placeholder="Name" />
+                            <input id="Name" type="text" placeholder="Name" name="name"  onChange={onChange} value={formData.name} />
                         </div>
                         <div className="input-group">
                             <img src="phone-call.png" alt="Phone Number" />
-                            <input id="Number" type="text" placeholder="Phone Number" />
+                            <input id="Number" type="text" placeholder="Phone Number"  name="phone" onChange={onChange} value={formData.phone}/>
                         </div>
                         <div className="input-group">
                             <img src="email.png" alt="E-mail" />
-                            <input id="Email" type="text" placeholder="E-mail" />
+                            <input id="Email" type="text" placeholder="E-mail" name="email" onChange={onChange} value={formData.email}  />
                         </div>
                         <div className="input-group">
-                            <textarea name="message" id="Message" placeholder="Message"></textarea>
+                            <textarea name="message" id="Message" placeholder="Message"  onChange={onChange} value={formData.message}  ></textarea>
                         </div>
                         <div id="btn">
                             <button type="submit">Send Message</button>
