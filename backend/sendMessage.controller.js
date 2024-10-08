@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
     },
     tls: {
         rejectUnauthorized: false, // Allow self-signed certificates
-      },
+    },
 });
 
 const sendMessageToServer = async (emailOptions) => {
@@ -25,21 +25,45 @@ const sendMessageToServer = async (emailOptions) => {
     }
 };
 
+// Function to validate email format using a regular expression
+const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+};
+
+// Function to validate that phone number contains only digits
+const isValidPhoneNumber = (phone) => {
+    const phoneRegex = /^\d+$/;  // Only digits
+    return phoneRegex.test(phone);
+};
+
 const sendMessage = async (req, res) => {
     const { name, phone, email, message } = req.body;
     
-    console.log(req.body)
-  
+    // Validate that required fields are present
     if (!name || !phone || !email || !message) {
-        return res.status(401).json({ message: "All fields are required", success: false });
+        return res.status(400).json({ message: "All fields are required", success: false });
     }
-    // console.log(process.env.SERVER_EMAIL);
-    // console.log(process.env.SERVER_EMAIL_PASS)
-    // console.log(process.env.ADMIN_EMAIL)
+    
+    // Validate email format
+    if (!isValidEmail(email)) {
+        return res.status(400).json({ message: "Invalid email format", success: false });
+    }
+
+    // Validate phone number (digits only)
+    if (!isValidPhoneNumber(phone)) {
+        return res.status(400).json({ message: "Invalid phone number", success: false });
+    }
+    
+    // Ensure environment variables are set
+    if (!process.env.SERVER_EMAIL || !process.env.SERVER_EMAIL_PASS || !process.env.ADMIN_EMAIL) {
+        return res.status(500).json({ message: "Server configuration error", success: false });
+    }
+
     // Define email options
     const emailOptions = {
         from: `"Server" <${process.env.SERVER_EMAIL}>`, 
-        to: process.env.ADMIN_EMAIL, // Email address to send enquiry to (admin email)
+        to: process.env.ADMIN_EMAIL, // Admin email
         subject: `New Enquiry from ${name}`, // Subject of the email
         html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; background-color: #f9f9f9;">
@@ -86,7 +110,6 @@ const sendMessage = async (req, res) => {
         `
     };
     
-
     try {
         await sendMessageToServer(emailOptions);
         return res.status(200).json({ message: "Enquiry sent successfully!", success: true });
@@ -95,5 +118,4 @@ const sendMessage = async (req, res) => {
     }
 };
 
-
-export {sendMessage}
+export { sendMessage };
